@@ -4,7 +4,7 @@ $(document).ready(function() {
   grid.createCells();
   console.log(grid.cells);
   grid.renderGrid();
+  grid.createCells();
   clicky();
-
 });
 

@@ -18,6 +18,7 @@ background-image: url(http://i.imgur.com/Zrp6hA6.jpg);
     height: 80px;
     border: 1px solid #000;
     display: inline-block;
+    margin: 3px;
 }
 
 .blue {
