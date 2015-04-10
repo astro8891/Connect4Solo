@@ -1,7 +1,7 @@
 function Grid (height, width) {
   this.width = width;
   this.height = height;
-  this.cells = []
+  this.cells = [] //this will be an array of arrays
 }
 
 function Cell (x,y, active){
@@ -9,6 +9,16 @@ function Cell (x,y, active){
   this.y =y ;
   this.active === false;
 }
+
+/*
+Grid proto createCells
+  for loop var rownum from 0 to height from grom grid property
+    create new var row assigned empty array
+    push row into cells in grid property
+    for loop var colnum from 0 to width from grid property
+      create new var cell and assign it an instance of the cell function (class) with rownum and col num as arguments
+      push cell into current row
+*/
 
 Grid.prototype.createCells = function() {        
   for (var rownum=0; rownum < this.height; rownum++) {             //go through every column (ther is 6 of them)
@@ -39,16 +49,16 @@ Grid.prototype.CheckActiveCell = function(x,y) {
 
 switch (new Date().getDay()) {
     case 0:
-        ((x - 1), y) === Cell.active;
+        ((x + 1), y) === Cell.active;
         break;
     case 1:
-        ((x - 2), y) === Cell.active;;
+        ((x + 2), y) === Cell.active;
         break;
     case 2:
-        ((x - 3), y) === Cell.active;;
+        ((x + 3), y) === Cell.active;
         break;
     case 3:
-        day = ((x - 4), y);
+        ((x + 4), y);
         break;
     case 4:
         day = ((x - 5), y);
@@ -60,6 +70,28 @@ switch (new Date().getDay()) {
 
 
 }
+
+
+
+
+
+
+Grid.prototype.CellActiveRED = function() {
+  $('.cell').click(function(e) {
+  $(this).addClass('red');
+   });
+}
+}
+
+Grid.prototype.CellActiveBlue = function() {
+  $('.cell').click(function(e) {
+  $(this).addClass('blue');
+   });
+}
+}
+
+
+
 
 
 
